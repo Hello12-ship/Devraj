@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Profile Card — Devraj</title>
+<!-- Google typewriter font -->
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f8fb;
+    --card:#ffffff;
+    --accent:#0f172a;
+    --muted:#6b7280;
+    --glass: rgba(255,255,255,0.75);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,var(--bg),#eef2f7);
+    color:var(--accent);
+    padding:24px;
+  }
+
+  .card{
+    width:100%;
+    max-width:460px;
+    background:var(--card);
+    border-radius:16px;
+    box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+    padding:22px;
+    display:grid;
+    gap:18px;
+    align-items:center;
+  }
+
+  .row{
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+
+  .avatar{
+    width:86px;
+    height:86px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#e6eefc,#fdf7ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:#0b1220;
+    font-size:22px;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  }
+
+  .info{
+    flex:1;
+  }
+
+  .label{
+    display:block;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .name{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:0.2px;
+  }
+  .age{
+    font-size:14px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  /* box with typewriter font for shayari */
+  .shayari{
+    background:var(--glass);
+    border-radius:12px;
+    padding:18px;
+    font-family: "Special Elite", "Courier New", monospace;
+    font-size:17px;
+    line-height:1.45;
+    color:#0b1220;
+    border:1px solid rgba(11,18,32,0.06);
+  }
+
+  /* small footer note */
+  .meta{
+    text-align:right;
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  /* responsive */
+  @media (max-width:420px){
+    .row{gap:12px}
+    .avatar{width:72px;height:72px;font-size:20px}
+    .card{padding:16px}
+    .shayari{font-size:15px;padding:14px}
+  }
+</style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Devraj profile card">
+    <section class="row" aria-label="profile">
+      <div class="avatar" aria-hidden="true">DV</div>
+      <div class="info">
+        <span class="label">Name</span>
+        <div class="name">Devraj Verma</div>
+        <div class="age">Age — 12</div>
+      </div>
+    </section>
+
+    <section class="shayari" aria-label="shayari">
+      तुम्हारे चेहरे की एक मुस्कान से रोशन हो जाता है जहाँ, छोटे-छोटे ख्वाबों से बड़े सपने बनते हैं यहाँ।
+    </section>
+
+    <div class="meta">A small modern showcase</div>
+  </main>
+</body>
+</html>
