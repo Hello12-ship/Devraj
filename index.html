@@ -1,129 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Profile Card — Devraj</title>
-<!-- Google typewriter font -->
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devraj Verma - Ad Showcase</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f7f8fb;
-    --card:#ffffff;
-    --accent:#0f172a;
-    --muted:#6b7280;
-    --glass: rgba(255,255,255,0.75);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg,var(--bg),#eef2f7);
-    color:var(--accent);
-    padding:24px;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .card{
-    width:100%;
-    max-width:460px;
-    background:var(--card);
-    border-radius:16px;
-    box-shadow: 0 8px 30px rgba(15,23,42,0.08);
-    padding:22px;
-    display:grid;
-    gap:18px;
-    align-items:center;
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
   }
 
-  .row{
-    display:flex;
-    gap:16px;
-    align-items:center;
+  /* Overlay dark tint */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 0;
   }
 
-  .avatar{
-    width:86px;
-    height:86px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#e6eefc,#fdf7ff);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    color:#0b1220;
-    font-size:22px;
-    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  .box {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px 35px;
+    max-width: 400px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
   }
 
-  .info{
-    flex:1;
+  .name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
   }
 
-  .label{
-    display:block;
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:6px;
-  }
-  .name{
-    font-size:20px;
-    font-weight:700;
-    letter-spacing:0.2px;
-  }
-  .age{
-    font-size:14px;
-    color:var(--muted);
-    margin-top:4px;
+  .age {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    opacity: 0.85;
   }
 
-  /* box with typewriter font for shayari */
-  .shayari{
-    background:var(--glass);
-    border-radius:12px;
-    padding:18px;
-    font-family: "Special Elite", "Courier New", monospace;
-    font-size:17px;
-    line-height:1.45;
-    color:#0b1220;
-    border:1px solid rgba(11,18,32,0.06);
+  .tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffefba;
   }
 
-  /* small footer note */
-  .meta{
-    text-align:right;
-    font-size:12px;
-    color:var(--muted);
+  .shayari {
+    margin-top: 40px;
+    max-width: 600px;
+    font-family: 'Special Elite', monospace;
+    font-size: 1.1rem;
+    color: #fff;
+    z-index: 1;
+    line-height: 1.6;
+    padding: 0 15px;
   }
 
-  /* responsive */
-  @media (max-width:420px){
-    .row{gap:12px}
-    .avatar{width:72px;height:72px;font-size:20px}
-    .card{padding:16px}
-    .shayari{font-size:15px;padding:14px}
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffd700;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 480px) {
+    .box {
+      max-width: 90%;
+      padding: 20px;
+    }
+    .name { font-size: 1.5rem; }
+    .shayari { font-size: 1rem; }
   }
 </style>
 </head>
 <body>
-  <main class="card" role="main" aria-label="Devraj profile card">
-    <section class="row" aria-label="profile">
-      <div class="avatar" aria-hidden="true">DV</div>
-      <div class="info">
-        <span class="label">Name</span>
-        <div class="name">Devraj Verma</div>
-        <div class="age">Age — 12</div>
-      </div>
-    </section>
+  <div class="box">
+    <div class="name">Name - Devraj Verma</div>
+    <div class="age">Age - 12</div>
+    <div class="tagline">✨ Dreams don’t wait — they shine! ✨</div>
+  </div>
 
-    <section class="shayari" aria-label="shayari">
-      तुम्हारे चेहरे की एक मुस्कान से रोशन हो जाता है जहाँ, छोटे-छोटे ख्वाबों से बड़े सपने बनते हैं यहाँ।
-    </section>
+  <div class="shayari">
+    मुस्कुराता है वो चाँद भी जब तेरा नाम सुनता है,<br>
+    तेरे जैसे लोग तो खुद में एक कहानी बन जाते हैं।
+  </div>
 
-    <div class="meta">A small modern showcase</div>
-  </main>
+  <div class="footer">Made by Akash</div>
 </body>
 </html>
